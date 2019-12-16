@@ -32,7 +32,7 @@
 // Unfortunately iOS users need to start a session to read tags
 - (void)beginSession:(CDVInvokedUrlCommand*)command {
     NSLog(@"beginSession");
-    if (@available(iOS 13.0, *)) {
+    if (@available(iOS 13.2, *)) {
         _nfcSession = [[NFCTagReaderSession new]
                        initWithPollingOption:(NFCPollingISO14443 | NFCPollingISO15693 | NFCPollingISO15693) delegate:self queue:dispatch_get_main_queue()];
     } else {
